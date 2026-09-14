@@ -1,0 +1,12 @@
+# Store engineering binary files with Git LFS when they are added.
+*.CATPart filter=lfs diff=lfs merge=lfs -text
+*.CATProduct filter=lfs diff=lfs merge=lfs -text
+*.igs filter=lfs diff=lfs merge=lfs -text
+*.iges filter=lfs diff=lfs merge=lfs -text
+*.stp filter=lfs diff=lfs merge=lfs -text
+*.step filter=lfs diff=lfs merge=lfs -text
+*.scdoc filter=lfs diff=lfs merge=lfs -text
+*.agdb filter=lfs diff=lfs merge=lfs -text
+*.mechdat filter=lfs diff=lfs merge=lfs -text
+*.wbpz filter=lfs diff=lfs merge=lfs -text
+

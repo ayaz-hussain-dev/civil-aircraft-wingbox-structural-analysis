@@ -1,0 +1,27 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+~$*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ANSYS transient and solver-generated files
+*_files/
+*.lock
+*.rst
+*.rth
+*.full
+*.emat
+*.esav
+*.mode
+
+# CATIA temporary files
+*.CATPart.bak
+*.CATProduct.bak
+
