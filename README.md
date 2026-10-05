@@ -19,7 +19,7 @@ This project covers the structural design and analysis of a civil aircraft wing 
 | Baseline yield screen | 201.87 MPa peak stress | 420 MPa material yield | FoS **2.08** |
 | Mesh sensitivity | 8,159 elements | 57,260 elements | Two-level comparison |
 
-The uniform-thickness trade study met the mass-reduction target. The lower shell thickness increased deformation by 12.95% and peak von Mises stress by 14.16%, while the first buckling factor fell by 21.01%. Because stiffness and local stability both worsened, the reduced case is not treated as a final design.
+During the final project review, the 0.89-thickness sizing case was completed and the results were reassessed. It achieved an 11.14% mass reduction, but the lower shell thickness increased deformation by 12.95% and peak von Mises stress by 14.16%, while the first buckling factor fell by 21.01%. The reduced case is therefore presented as a sizing trade study rather than a final accepted configuration. The mesh results are similarly reported as a two-level sensitivity study, with a third level required before formal convergence is claimed.
 
 ## Engineering workflow
 
