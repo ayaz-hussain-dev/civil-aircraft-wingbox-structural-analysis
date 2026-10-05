@@ -1,27 +1,28 @@
-# Operating-system and editor files
-.DS_Store
-Thumbs.db
-*.tmp
-*.bak
-~$*
-
 # Python
 __pycache__/
 *.py[cod]
+.pytest_cache/
 .venv/
 venv/
 
-# ANSYS transient and solver-generated files
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large proprietary solver/CAD working files
+*.wbpj
+*.wbpz
+*.mechdb
 *_files/
-*.lock
-*.rst
-*.rth
-*.full
-*.emat
-*.esav
-*.mode
+*.CATPart
+*.CATProduct
+*.igs
+*.iges
+*.stp
+*.step
 
-# CATIA temporary files
-*.CATPart.bak
-*.CATProduct.bak
-
+# Temporary office files
+~$*.xlsx
+~$*.xlsm

@@ -1,0 +1,200 @@
+{
+  "checks": {
+    "deflection_screen_m": 3.0,
+    "lift_difference_limit_percent": 8.0,
+    "mesh_latest_step_target_percent": 5.0,
+    "minimum_buckling_factor": 1.0,
+    "structural_correlation_limit_percent": 8.0
+  },
+  "correlation": {
+    "analytical_peak_nominal_vm_stress_pa": 174452137.32894665,
+    "analytical_tip_deformation_m": 2.796930467155179,
+    "correlation_limit_percent": 8.0,
+    "deformation_difference_percent": 4.675465993183224,
+    "fea_peak_vm_stress_pa": 201870000.0,
+    "fea_tip_deformation_m": 2.9277,
+    "nominal_peak_stress_difference_percent": 15.716553027581586
+  },
+  "fea_cases": {
+    "baseline": {
+      "buckling_mode_1_factor": 0.45096,
+      "case": "baseline",
+      "description": "Baseline solved ANSYS model",
+      "elements": 8159,
+      "mass_kg": 9679.1,
+      "max_total_deformation_m": 2.9277,
+      "max_von_mises_stress_pa": 201870000.0,
+      "nodes": 6647
+    },
+    "reduced_thickness": {
+      "buckling_mode_1_factor": 0.3562,
+      "case": "reduced_thickness",
+      "description": "Uniform 0.89 shell-thickness sizing trial",
+      "elements": 8159,
+      "mass_kg": 8601.0,
+      "max_total_deformation_m": 3.3068,
+      "max_von_mises_stress_pa": 230460000.0,
+      "nodes": 6647
+    }
+  },
+  "flight_condition": {
+    "altitude_m": 11277.6,
+    "density_kg_m3": 0.3483310310295359,
+    "dynamic_pressure_pa": 10955.914729046604,
+    "full_aircraft_lift_n": 2102111.359062172,
+    "half_aircraft_lift_n": 1051055.679531086,
+    "mach": 0.85,
+    "pressure_pa": 21662.708312499468,
+    "speed_of_sound_m_s": 295.0694935090715,
+    "temperature_k": 216.64999999999998,
+    "true_airspeed_m_s": 250.80906948271075
+  },
+  "gates": {
+    "baseline_buckling": "REVIEW",
+    "baseline_deflection": "PASS",
+    "baseline_yield": "PASS",
+    "deformation_correlation": "PASS",
+    "lift_equation_check": "PASS",
+    "mesh_convergence": "PENDING \u2014 add a third mesh before claiming convergence",
+    "reduced_buckling": "REVIEW",
+    "reduced_deflection": "REVIEW",
+    "reduced_yield": "PASS"
+  },
+  "load_summary": {
+    "bdf_aerodynamic_half_wing_force_n": 967010.71830914,
+    "lift_difference_percent": 7.996242526318069,
+    "load_balance_error_n": 0.0,
+    "net_vertical_load_n": 632210.1084986425,
+    "reference_root_vertical_load_n": 632210.1084986425,
+    "root_bending_moment_nm": 10846390.093579268,
+    "root_torsion_nm": -294932.8542440666
+  },
+  "loads": [
+    {
+      "component": "aerodynamic",
+      "force_n": 967010.71830914,
+      "note": "Positive global-Z aerodynamic FORCE-card sum",
+      "source_count": 13586
+    },
+    {
+      "component": "wingbox_weight",
+      "force_n": -117312.89019049755,
+      "note": "Wing-box shell gravity",
+      "source_count": 25055
+    },
+    {
+      "component": "leading_trailing_edge_weight",
+      "force_n": -35992.89,
+      "note": "Leading- and trailing-edge CONM2 gravity",
+      "source_count": 18
+    },
+    {
+      "component": "engine_weight",
+      "force_n": -73584.81,
+      "note": "Engine CONM2 gravity",
+      "source_count": 13
+    },
+    {
+      "component": "fuel_20_percent_weight",
+      "force_n": -107910.01962,
+      "note": "Twenty-percent fuel case CONM2 gravity",
+      "source_count": 43
+    }
+  ],
+  "mesh_steps": [
+    {
+      "deformation_change_from_previous_percent": null,
+      "elements": 8159,
+      "max_total_deformation_m": 0.14527,
+      "max_von_mises_stress_pa": 10663000.0,
+      "mesh": "coarse",
+      "nodes": 6647,
+      "stress_change_from_previous_percent": null
+    },
+    {
+      "deformation_change_from_previous_percent": 12.335650857024843,
+      "elements": 57260,
+      "max_total_deformation_m": 0.16319,
+      "max_von_mises_stress_pa": 11954000.0,
+      "mesh": "refined",
+      "nodes": 52357,
+      "stress_change_from_previous_percent": 12.107286879864954
+    }
+  ],
+  "project": {
+    "analysis_basis": "Half-wing, 1g reference load case",
+    "model": "Reference civil aircraft wing-box",
+    "name": "Civil Aircraft Wing-Box Structural Design and FEA"
+  },
+  "sizing": {
+    "actual_mass_reduction_percent": 11.13843229225858,
+    "baseline_yield_fos": 2.0805468866101946,
+    "changes": {
+      "buckling_factor_percent": -21.01295015078943,
+      "deformation_percent": 12.948731085835288,
+      "mass_percent": -11.13843229225858,
+      "stress_percent": 14.162579878139397
+    },
+    "mass_saved_kg": 1078.1000000000004,
+    "reduced_yield_fos": 1.8224420723769852,
+    "target_mass_kg": 8614.399000000001,
+    "target_mass_reduction_percent": 11.0
+  },
+  "spanwise_handcalc": [
+    {
+      "bending_moment_mnm": 10.846390093579268,
+      "eta": 0.0,
+      "total_deflection_m": 0.0
+    },
+    {
+      "bending_moment_mnm": 9.148706023725717,
+      "eta": 0.1,
+      "total_deflection_m": 0.009803880189311023
+    },
+    {
+      "bending_moment_mnm": 7.0795232932736605,
+      "eta": 0.2,
+      "total_deflection_m": 0.03995281977816808
+    },
+    {
+      "bending_moment_mnm": 5.296944397026529,
+      "eta": 0.3,
+      "total_deflection_m": 0.10782228997455005
+    },
+    {
+      "bending_moment_mnm": 3.7860066972853126,
+      "eta": 0.4,
+      "total_deflection_m": 0.2307474983473035
+    },
+    {
+      "bending_moment_mnm": 2.4535623258630666,
+      "eta": 0.5,
+      "total_deflection_m": 0.4314176257347815
+    },
+    {
+      "bending_moment_mnm": 1.4214548856319245,
+      "eta": 0.6,
+      "total_deflection_m": 0.7231492220292384
+    },
+    {
+      "bending_moment_mnm": 0.6940012968784784,
+      "eta": 0.7,
+      "total_deflection_m": 1.1211601895019032
+    },
+    {
+      "bending_moment_mnm": 0.24670836615808095,
+      "eta": 0.8,
+      "total_deflection_m": 1.6327189343222945
+    },
+    {
+      "bending_moment_mnm": 0.03763198032260938,
+      "eta": 0.9,
+      "total_deflection_m": 2.2436611198850294
+    },
+    {
+      "bending_moment_mnm": 0.0,
+      "eta": 1.0,
+      "total_deflection_m": 2.796930467155179
+    }
+  ]
+}

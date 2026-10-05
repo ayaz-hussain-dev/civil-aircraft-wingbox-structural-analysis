@@ -1,0 +1,12 @@
+metric,value,unit
+Half-aircraft lift,1051055.679531086,N
+BDF aerodynamic force,967010.71830914,N
+Lift difference,7.996242526318069,%
+Net root vertical load,632210.1084986425,N
+Root bending moment,10846390.093579268,N m
+Root torsion,-294932.8542440666,N m
+Analytical tip deformation,2.796930467155179,m
+ANSYS baseline deformation,2.9277,m
+Deformation difference,4.675465993183224,%
+Actual mass reduction,11.13843229225858,%
+Mass saved,1078.1000000000004,kg

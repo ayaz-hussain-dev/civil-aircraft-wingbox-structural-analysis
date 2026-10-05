@@ -1,0 +1,3 @@
+case,thickness_scale,mass_kg,max_total_deformation_m,max_von_mises_stress_mpa,buckling_mode_1_factor,nodes,elements
+baseline,1.00,9679.1,2.9277,201.87,0.45096,6647,8159
+reduced_thickness,0.89,8601.0,3.3068,230.46,0.35620,6647,8159

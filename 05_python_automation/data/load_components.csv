@@ -1,0 +1,6 @@
+component,force_n,source_count,note
+aerodynamic,967010.71830914,13586,Positive global-Z aerodynamic FORCE-card sum
+wingbox_weight,-117312.89019049755,25055,Wing-box shell gravity
+leading_trailing_edge_weight,-35992.89,18,Leading- and trailing-edge CONM2 gravity
+engine_weight,-73584.81,13,Engine CONM2 gravity
+fuel_20_percent_weight,-107910.01962,43,Twenty-percent fuel case CONM2 gravity

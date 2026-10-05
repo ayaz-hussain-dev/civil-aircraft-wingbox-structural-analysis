@@ -1,0 +1,43 @@
+{
+  "project": {
+    "name": "Civil Aircraft Wing-Box Structural Design and FEA",
+    "model": "Reference civil aircraft wing-box",
+    "analysis_basis": "Half-wing, 1g reference load case"
+  },
+  "geometry": {
+    "semi_span_m": 29.380513849,
+    "quarter_chord_sweep_deg": 35.0,
+    "side_of_body_chord_m": 11.92,
+    "tip_chord_m": 2.736
+  },
+  "flight_condition": {
+    "mach": 0.85,
+    "altitude_ft": 37000.0,
+    "reference_area_m2": 383.74,
+    "lift_coefficient": 0.5
+  },
+  "material": {
+    "youngs_modulus_pa": 68948000000.0,
+    "poissons_ratio": 0.32,
+    "density_kg_m3": 2768.0,
+    "yield_strength_pa": 420000000.0
+  },
+  "analytical_results": {
+    "root_vertical_load_n": 632210.1084986424,
+    "root_bending_moment_nm": 10846390.093579268,
+    "root_torsion_nm": -294932.8542440666,
+    "tip_deformation_m": 2.796930467155179,
+    "peak_nominal_vm_stress_pa": 174452137.32894665
+  },
+  "sizing": {
+    "target_mass_reduction_percent": 11.0,
+    "uniform_shell_thickness_scale": 0.89
+  },
+  "checks": {
+    "lift_difference_limit_percent": 8.0,
+    "structural_correlation_limit_percent": 8.0,
+    "deflection_screen_m": 3.0,
+    "minimum_buckling_factor": 1.0,
+    "mesh_latest_step_target_percent": 5.0
+  }
+}

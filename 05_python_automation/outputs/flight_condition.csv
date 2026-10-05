@@ -1,0 +1,11 @@
+metric,value
+altitude_m,11277.6
+mach,0.85
+temperature_k,216.64999999999998
+pressure_pa,21662.708312499468
+density_kg_m3,0.3483310310295359
+speed_of_sound_m_s,295.0694935090715
+true_airspeed_m_s,250.80906948271075
+dynamic_pressure_pa,10955.914729046604
+full_aircraft_lift_n,2102111.359062172
+half_aircraft_lift_n,1051055.679531086

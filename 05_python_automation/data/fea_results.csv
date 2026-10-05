@@ -1,0 +1,3 @@
+case,description,mass_kg,max_total_deformation_m,max_von_mises_stress_pa,buckling_mode_1_factor,nodes,elements
+baseline,Baseline solved ANSYS model,9679.1,2.9277,201870000,0.45096,6647,8159
+reduced_thickness,Uniform 0.89 shell-thickness sizing trial,8601.0,3.3068,230460000,0.3562,6647,8159

@@ -1,0 +1,10 @@
+check,status
+lift_equation_check,PASS
+deformation_correlation,PASS
+baseline_deflection,PASS
+reduced_deflection,REVIEW
+baseline_yield,PASS
+reduced_yield,PASS
+baseline_buckling,REVIEW
+reduced_buckling,REVIEW
+mesh_convergence,PENDING — add a third mesh before claiming convergence
