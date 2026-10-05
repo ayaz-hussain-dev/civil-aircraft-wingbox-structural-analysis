@@ -14,12 +14,12 @@ This project covers the structural design and analysis of a civil aircraft wing 
 |---|---:|---:|---|
 | Aerodynamic load sanity check | BDF half-wing force: 967.011 kN | `qSCL/2`: 1,051.056 kN | **7.996% difference** |
 | Analytical–FEA deformation correlation | Analytical: 2.7969 m | ANSYS: 2.9277 m | **4.68% difference** |
-| Shell-thickness sizing trial | 9,679.1 kg | 8,601.0 kg | **11.14% mass reduction** |
+| Shell-thickness trade study | 9,679.1 kg | 8,601.0 kg | **11.14% mass reduction** |
 | Sizing mass saving | — | 1,078.1 kg | Target exceeded |
 | Baseline yield screen | 201.87 MPa peak stress | 420 MPa material yield | FoS **2.08** |
 | Mesh sensitivity | 8,159 elements | 57,260 elements | Two-level comparison |
 
-The sizing run met the mass target. The lower shell thickness increased deformation by 12.95% and peak von Mises stress by 14.16%, while the first buckling factor fell by 21.01%. This makes stiffness and buckling the main areas for the next iteration.
+The uniform-thickness trade study met the mass-reduction target. The lower shell thickness increased deformation by 12.95% and peak von Mises stress by 14.16%, while the first buckling factor fell by 21.01%. Because stiffness and local stability both worsened, the reduced case is not treated as a final design.
 
 ## Engineering workflow
 
@@ -87,6 +87,8 @@ Signed aerodynamic and inertia components give the following root actions for th
 
 The swept equivalent-beam model includes spanwise section variation, bending, shear, and torsion. The equations, inputs, and editable assumptions are retained in [`01_hand_calculations/wingbox_hand_calculations.xlsx`](01_hand_calculations/wingbox_hand_calculations.xlsx).
 
+The analytical model is used for preliminary sizing and response correlation. The reported baseline and reduced-thickness masses in the sections below are taken from the solved ANSYS shell models.
+
 ## 3. Baseline static structural analysis
 
 The baseline ANSYS model uses shell elements with the imported nodal loads, surface loads, and root constraints. The solved mesh contains **8,159 elements** and **6,647 nodes**.
@@ -121,6 +123,8 @@ $$\frac{|2.9277-2.7969|}{2.7969}\times100=\mathbf{4.68\%}$$
 
 This is within the project's 8% correlation target. Total deformation is used for the main comparison because it gives a consistent global response in both models. The nominal beam stress and local FEA peak stress are reported separately.
 
+The remaining difference is expected because the analytical model uses a swept equivalent-beam idealisation, while ANSYS represents the wing box with shell elements and more detailed sectional stiffness, load distribution, and local constraint effects.
+
 <p align="center">
   <img src="05_python_automation/outputs/02_deformation_correlation.png" alt="Analytical and ANSYS deformation correlation" width="72%">
 </p>
@@ -141,7 +145,7 @@ The linked eigenvalue study was used to identify the first elastic instability m
   </tr>
 </table>
 
-The mode shapes and load factors show that local stability should be addressed in the next stiffener and panel-thickness iteration.
+With a first eigenvalue of **0.45096**, the baseline model does not meet the selected linear-buckling screening criterion at the applied reference load. This identifies local stability as a governing constraint for the next iteration, with possible changes to stringer pitch, rib spacing, local skin thickness, and stiffener geometry.
 
 ## 6. Mesh sensitivity study
 
@@ -159,9 +163,9 @@ A separate verification load case was solved at two discretisation levels:
 
 These results show the response change between the two meshes. A third mesh level is planned before formal convergence is claimed. The four full-resolution contour plots and CSV data are in [`04_mesh_sensitivity/`](04_mesh_sensitivity/).
 
-## 7. Shell-thickness sizing iteration
+## 7. Shell-thickness sizing trade study
 
-The 17 imported shell-property thicknesses were scaled to **0.89** of baseline and the static and buckling analyses were re-solved.
+For a uniform-thickness trade study, the 17 imported shell-property thicknesses were scaled to **0.89** of baseline and the static and buckling analyses were re-solved.
 
 | Metric | Baseline | Reduced thickness | Change |
 |---|---:|---:|---:|
@@ -186,7 +190,7 @@ The 17 imported shell-property thicknesses were scaled to **0.89** of baseline a
   </tr>
 </table>
 
-The iteration achieved the mass-reduction objective while retaining a yield factor of safety above 1.0. A further iteration would redistribute material towards the panels governing stiffness and buckling rather than applying another uniform reduction.
+The 0.89-thickness case reduced the ANSYS shell mass from **9,679.1 kg** to **8,601.0 kg**, a reduction of **11.14%**. It retained a yield factor of safety of **1.82**, but maximum deformation increased to **3.3068 m**, above the **3.0 m** project screen, and the first buckling factor fell to **0.3562**. The result is therefore treated as a trade study rather than an accepted or optimised final configuration. A further iteration would redistribute material towards the panels governing stiffness and buckling rather than applying another uniform reduction.
 
 ## 8. Preliminary fatigue and damage-tolerance screen
 
